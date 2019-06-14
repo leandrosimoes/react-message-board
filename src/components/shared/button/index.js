@@ -12,6 +12,9 @@ const Button = styled.button`
     cursor: pointer;
     transition: all .3s ease-in-out;
     outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     ${props => !!props.canClick ? 'pointer-events: all;' : 'pointer-events: none;'}
     ${props => !!props.canClick ? 'opacity: 1;' : 'opacity: .8;'}
 

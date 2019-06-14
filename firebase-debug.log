@@ -1,0 +1,17 @@
+[debug] [2019-06-14T01:33:46.297Z] ----------------------------------------------------------------------
+[debug] [2019-06-14T01:33:46.300Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-06-14T01:33:46.300Z] CLI Version:   6.11.0
+[debug] [2019-06-14T01:33:46.300Z] Platform:      win32
+[debug] [2019-06-14T01:33:46.300Z] Node Version:  v10.16.0
+[debug] [2019-06-14T01:33:46.301Z] Time:          Thu Jun 13 2019 22:33:46 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-06-14T01:33:46.302Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-14T01:33:46.345Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-14T01:33:46.346Z] > authorizing via signed-in user
+[debug] [2019-06-14T01:33:46.346Z] [iam] checking project messageboard-a3413 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-06-14T01:33:46.348Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-14T01:33:46.348Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-14T01:33:46.803Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-14T01:33:46.814Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/messageboard-a3413:testIamPermissions  
+

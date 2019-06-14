@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { addMessage, login, setUser, logout } from '../../actions'
 import { theme } from '../../contants'
 import { auth } from '../../firebase'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const MessageFormWrapper = styled.div`
     width: 100%;
@@ -14,7 +16,6 @@ const MessageFormWrapper = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
 `
-
 const MessageFormNotLoggedInMessage = styled.div`
     width: 100%;
     height: 50px;
@@ -25,6 +26,11 @@ const MessageFormNotLoggedInMessage = styled.div`
     color: ${theme.primaryColor};
     display: flex;
     justify-content: space-between;
+`
+
+const ButtonText = styled.span`
+    line-height: 30px;
+    padding-left: 5px;
 `
 
 const MessageForm = () => {
@@ -78,7 +84,10 @@ const MessageForm = () => {
         return (
             <MessageFormNotLoggedInMessage>
                 <span>Sorry! You must be logged in so you can send messages.</span>
-                <Button onClick={handleLoginClick} canClick={true}>Login with GitHub</Button>
+                <Button onClick={handleLoginClick} canClick={true}>
+                    <FontAwesomeIcon icon={faGithub} size={"2x"}/>
+                    <ButtonText>Login with GitHub</ButtonText>
+                </Button>
             </MessageFormNotLoggedInMessage>
         )
     }
