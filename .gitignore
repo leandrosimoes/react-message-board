@@ -24,3 +24,4 @@ yarn-error.log*
 
 # my stuff
 **/*/credentials
+firebase-debug.log
