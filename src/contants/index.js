@@ -1,11 +1,9 @@
 const theme = {
-    primaryColor: '#f44336',
-    secondaryColor: '#520600',
+    primaryColor: '#fff',
+    secondaryColor: '#292929',
     primaryFont: 'Lobster',
     secondaryFont: 'Roboto',
-    disabledColor: '#ccc'
+    disabledColor: '#9e9e9e',
 }
 
-export {
-    theme
-}
+export { theme }

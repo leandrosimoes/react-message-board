@@ -11,9 +11,9 @@ export default function reducer(state = INITIAL_STATE, action) {
             return { ...state, loading: true }
         case ACTION_TYPES.END_FETCH_MESSAGES:
             const { messages } = action
-            let messagesArray = Object.keys(messages || {}).map(key => ({ id: messages[key].id, text: messages[key].text }))
+            let messagesArray = Object.keys(messages || {}).map(key => ({ ...messages[key] }))
 
-            return { ...state, loading: false, messages: messagesArray.reverse().slice(0, 6)  }
+            return { ...state, loading: false, messages: messagesArray.reverse().slice(0, 6) }
         default:
             return state
     }

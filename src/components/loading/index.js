@@ -6,7 +6,7 @@ const Loading = styled.div`
     font-size: 20px;
     text-align: center;
     width: 100%;
-    color: ${theme.primaryColor};
+    color: ${theme.secondaryColor};
 `
 
 export default Loading

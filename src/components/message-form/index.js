@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Button from '../shared/button'
-import TextInput from '../shared/textinput'
 import styled from 'styled-components'
-import { addMessage, login, setUser, logout } from '../../actions'
-import { theme } from '../../contants'
-import { auth } from '../../firebase'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import Button from '../shared/button'
+import TextInput from '../shared/textinput'
+import UserInfo from '../user-info'
+import { addMessage, login, setUser } from '../../actions'
+import { theme } from '../../contants'
+import { auth } from '../../firebase'
 
 const MessageFormWrapper = styled.div`
     width: 100%;
@@ -48,12 +49,12 @@ const MessageForm = () => {
         auth.onAuthStateChanged(user => {
             !!user && dispatch(setUser(user))
         })
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         setCanSend(!!message && !!user)
     }, [message, user])
-    
+
     function handleChange(event) {
         setMessage(event.target.value)
     }
@@ -61,7 +62,9 @@ const MessageForm = () => {
     function handleSendClick() {
         if (!message || !canSend) return
 
-        dispatch(addMessage({ id: new Date().getTime(), text: message }))
+        const { displayName, photoURL, email } = user
+        
+        dispatch(addMessage({ id: new Date().getTime(), text: message, userName: displayName, userPhoto: photoURL, userEmail: email }))
 
         setMessage('')
 
@@ -74,18 +77,12 @@ const MessageForm = () => {
         dispatch(login())
     }
 
-    function handleLogoutClick() {
-        if (!user) return
-
-        dispatch(logout())
-    }
-
-    if (!user) { 
+    if (!user) {
         return (
             <MessageFormNotLoggedInMessage>
                 <span>Sorry! You must be logged in so you can send messages.</span>
-                <Button onClick={handleLoginClick} canClick={true}>
-                    <FontAwesomeIcon icon={faGithub} size={"2x"}/>
+                <Button backgroundColor={theme.primaryColor} color={theme.secondaryColor} onClick={handleLoginClick} canClick={true}>
+                    <FontAwesomeIcon icon={faGithub} size={'2x'} />
                     <ButtonText>Login with GitHub</ButtonText>
                 </Button>
             </MessageFormNotLoggedInMessage>
@@ -94,10 +91,12 @@ const MessageForm = () => {
 
     return (
         <>
+            <UserInfo user={user} />
             <MessageFormWrapper>
-                <TextInput type={"text"} ref={textInput} width={'75%'} value={message} onChange={handleChange}/>
-                <Button onClick={handleSendClick} canClick={canSend}>Send</Button>
-                <Button onClick={handleLogoutClick} canClick={true}>Logout</Button>
+                <TextInput type={'text'} ref={textInput} width={'85%'} value={message} onChange={handleChange} />
+                <Button onClick={handleSendClick} canClick={canSend}>
+                    Send
+                </Button>
             </MessageFormWrapper>
         </>
     )

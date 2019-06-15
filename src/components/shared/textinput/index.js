@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { theme } from '../../../contants'
 
 const TextInput = styled.input`
-    border: 1px solid ${theme.primaryColor};
+    border: 1px solid ${theme.secondaryColor};
     background-color: #fff;
-    color: ${theme.primaryColor};
+    color: ${theme.secondaryColor};
     border-radius: 3px;
     width: ${props => props.width || '100%'};
     max-width: ${props => props.width || '100%'};

@@ -5,11 +5,11 @@ export const ACTION_TYPES = {
     FETCH_MESSAGES: 'FETCH_MESSAGES',
     INIT_FETCH_MESSAGES: 'INIT_FETCH_MESSAGES',
     END_FETCH_MESSAGES: 'END_FETCH_MESSAGES',
-    SET_USER: 'SET_USER'
+    SET_USER: 'SET_USER',
 }
 
 export const addMessage = message => async dispatch => {
-    messagesDB.push().set(message);
+    messagesDB.push().set(message)
 }
 
 export const initFetchMessages = () => {
@@ -23,9 +23,9 @@ export const endFetchMessages = messages => {
 export const fetchMessages = () => async dispatch => {
     dispatch(initFetchMessages())
 
-    messagesDB.on("value", snapshot => {
+    messagesDB.on('value', snapshot => {
         dispatch(endFetchMessages(snapshot.val()))
-    });
+    })
 }
 
 export const setUser = user => {
