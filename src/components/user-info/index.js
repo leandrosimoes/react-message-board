@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../../contants'
 import { useDispatch } from 'react-redux'
-import { logout } from '../../actions'
+import actions from '../../actions'
 
 const UserInfoWrapper = styled.div`
     display: flex;
@@ -51,7 +51,9 @@ const UserInfo = props => {
     function handleLogoutClick() {
         if (!user) return
 
-        dispatch(logout())
+        dispatch(actions.logout())
+
+        window.location.reload(true)
     }
 
     return (

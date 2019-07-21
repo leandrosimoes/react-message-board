@@ -4,7 +4,6 @@ import 'firebase/auth'
 
 import { firebaseCredentials } from '../credentials'
 
-// Initialize Firebase
 const app = firebase.initializeApp(firebaseCredentials)
 
 export const database = firebase.database()

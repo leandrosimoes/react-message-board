@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { theme } from '../../contants'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchMessages } from '../../actions'
+import actions from '../../actions'
 import Loading from '../loading'
 
 const MessagesListWrapper = styled.div`
@@ -64,7 +64,7 @@ const MessagesList = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchMessages())
+        dispatch(actions.fetchMessages())
     }, [dispatch])
 
     return (

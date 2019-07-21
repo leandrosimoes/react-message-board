@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Button from '../shared/button'
 import TextInput from '../shared/textinput'
 import UserInfo from '../user-info'
-import { addMessage, login, setUser } from '../../actions'
+import actions from '../../actions'
 import { theme } from '../../contants'
 import { auth } from '../../firebase'
 
@@ -43,11 +43,11 @@ const MessageForm = () => {
 
     useEffect(() => {
         auth.getRedirectResult().then(({ user }) => {
-            !!user && dispatch(setUser(user))
+            !!user && dispatch(actions.setUser(user))
         })
 
         auth.onAuthStateChanged(user => {
-            !!user && dispatch(setUser(user))
+            !!user && dispatch(actions.setUser(user))
         })
     }, [dispatch])
 
@@ -64,7 +64,7 @@ const MessageForm = () => {
 
         const { displayName, photoURL, email } = user
         
-        dispatch(addMessage({ id: new Date().getTime(), text: message, userName: displayName, userPhoto: photoURL, userEmail: email }))
+        dispatch(actions.addMessage({ id: new Date().getTime(), text: message, userName: displayName, userPhoto: photoURL, userEmail: email }))
 
         setMessage('')
 
@@ -74,7 +74,7 @@ const MessageForm = () => {
     function handleLoginClick() {
         if (!!user) return
 
-        dispatch(login())
+        dispatch(actions.login())
     }
 
     if (!user) {
