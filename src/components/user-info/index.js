@@ -44,7 +44,7 @@ const UserInfoWrapper = styled.div`
     }
 `
 
-const UserInfo = props => {
+export const UserInfo = props => {
     const dispatch = useDispatch()
     const { user } = props
 
@@ -57,7 +57,7 @@ const UserInfo = props => {
     }
 
     return (
-        <UserInfoWrapper>
+        <UserInfoWrapper className="user-info" >
             <small>Logged in as:</small>
             <div>
                 <div>
