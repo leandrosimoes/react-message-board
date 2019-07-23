@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Button from '../shared/button'
@@ -10,31 +9,9 @@ import actions from '../../actions'
 import { theme } from '../../contants'
 import { auth } from '../../firebase'
 
-const MessageFormWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-`
-const MessageFormNotLoggedInMessage = styled.div`
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    background-color: ${theme.secondaryColor};
-    color: ${theme.primaryColor};
-    display: flex;
-    justify-content: space-between;
-`
+import { ButtonText, MessageFormNotLoggedInMessage, MessageFormWrapper } from './styles'
 
-const ButtonText = styled.span`
-    line-height: 30px;
-    padding-left: 5px;
-`
-
-const MessageForm = () => {
+export const MessageForm = props => {
     const [message, setMessage] = useState('')
     const [canSend, setCanSend] = useState(false)
     const user = useSelector(state => state.user)
@@ -72,14 +49,14 @@ const MessageForm = () => {
     }
 
     function handleLoginClick() {
-        if (!!user) return
+        if (!!props.user || !!user) return
 
         dispatch(actions.login())
     }
 
-    if (!user) {
+    if (!props.user && !user) {
         return (
-            <MessageFormNotLoggedInMessage>
+            <MessageFormNotLoggedInMessage className="message-form no-user">
                 <span>Sorry! You must be logged in so you can send messages.</span>
                 <Button backgroundColor={theme.primaryColor} color={theme.secondaryColor} onClick={handleLoginClick} canClick={true}>
                     <FontAwesomeIcon icon={faGithub} size={'2x'} />
@@ -91,10 +68,10 @@ const MessageForm = () => {
 
     return (
         <>
-            <UserInfo user={user} />
-            <MessageFormWrapper>
+            <UserInfo user={props.user || user} />
+            <MessageFormWrapper className="message-form with-user">
                 <TextInput type={'text'} ref={textInput} width={'85%'} value={message} onChange={handleChange} />
-                <Button onClick={handleSendClick} canClick={canSend}>
+                <Button onClick={handleSendClick} canClick={canSend} className={!!message ? 'btn-send' : 'btn-send disabled'}>
                     Send
                 </Button>
             </MessageFormWrapper>

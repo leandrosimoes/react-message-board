@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme } from '../../contants'
+import { theme } from '../../../contants'
 
 const Loading = styled.div`
     font-family: ${theme.secondaryFont};
