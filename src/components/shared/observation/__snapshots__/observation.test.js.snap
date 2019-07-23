@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`observation.test.js <Observation /> should match the snapshot 1`] = `
+<span
+  className="sc-bdVaJa bzOsUm"
+>
+  Snapshot Test
+</span>
+`;

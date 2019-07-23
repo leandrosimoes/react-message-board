@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`title.test.js <Title /> should match the snapshot 1`] = `
+<h1
+  className="sc-bdVaJa cSUaSj"
+>
+  Snapshot Test
+</h1>
+`;
