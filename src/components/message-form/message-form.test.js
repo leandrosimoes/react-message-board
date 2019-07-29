@@ -3,8 +3,8 @@ import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { act, Simulate } from 'react-dom/test-utils'
 
-import { MessageForm } from './index'
-import store from '../../store'
+import { MessageForm } from '~/components/message-form'
+import store from '~/store'
 
 describe('messages-form.test.js', () => {
     let container

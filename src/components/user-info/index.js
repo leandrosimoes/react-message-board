@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
-import actions from '../../actions'
+import actions from '~/actions'
 
-import { UserInfoWrapper, BtnLogout } from './style'
+import { UserInfoWrapper, BtnLogout } from '~/components/user-info/style'
 
 export const UserInfo = props => {
     const dispatch = useDispatch()

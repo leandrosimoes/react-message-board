@@ -1,6 +1,6 @@
 import React from 'react'
 import { create } from 'react-test-renderer'
-import TextInput from './index'
+import TextInput from '~/components/shared/textinput'
 
 describe('textinput.test.js', () => {
     test('<TextInput /> should render', () => {

@@ -3,8 +3,8 @@ import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { act } from 'react-dom/test-utils'
 
-import { MessagesList } from './index'
-import store from '../../store'
+import { MessagesList } from '~/components/messages-list'
+import store from '~/store'
 
 describe('messages-list.test.js', () => {
     let container

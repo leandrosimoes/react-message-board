@@ -1,4 +1,4 @@
-import { messagesDB as _messagesDB, auth as _auth, providers } from '../firebase'
+import { messagesDB as _messagesDB, auth as _auth, providers } from '~/firebase'
 
 export const ACTION_TYPES = {
     ADD_MESSAGE: 'ADD_MESSAGE',

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme } from '../../../contants'
+import { theme } from '~/constants'
 
 const Observation = styled.span`
     color: ${theme.disabledColor};

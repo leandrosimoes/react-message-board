@@ -1,6 +1,6 @@
 import React from 'react'
 import { create } from 'react-test-renderer'
-import Button from './index'
+import Button from '~/components/shared/button'
 
 describe('button.test.js', () => {
     test('<Button /> should render', () => {

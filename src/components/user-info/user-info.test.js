@@ -3,8 +3,8 @@ import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { act } from 'react-dom/test-utils'
 
-import { UserInfo } from './index'
-import store from '../../store'
+import { UserInfo } from '~/components/user-info'
+import store from '~/store'
 
 describe('user-info.test.js', () => {
     let container

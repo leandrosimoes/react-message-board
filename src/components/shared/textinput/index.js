@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme } from '../../../contants'
+import { theme } from '~/constants'
 
 const TextInput = styled.input`
     border: 1px solid ${theme.secondaryColor};

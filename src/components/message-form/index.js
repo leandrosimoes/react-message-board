@@ -4,14 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import PropTypes from 'prop-types'
 
-import Button from '../shared/button'
-import TextInput from '../shared/textinput'
-import UserInfo from '../user-info'
-import actions from '../../actions'
-import { theme } from '../../contants'
-import { auth } from '../../firebase'
+import Button from '~/components/shared/button'
+import TextInput from '~/components/shared/textinput'
+import UserInfo from '~/components/user-info'
+import actions from '~/actions'
+import { theme } from '~/constants'
+import { auth } from '~/firebase'
 
-import { ButtonText, MessageFormNotLoggedInMessage, MessageFormWrapper } from './styles'
+import {
+    ButtonText,
+    MessageFormNotLoggedInMessage,
+    MessageFormWrapper,
+} from '~/components/message-form/styles'
 
 export const MessageForm = props => {
     const [message, setMessage] = useState('')
@@ -83,7 +87,7 @@ export const MessageForm = props => {
 
     return (
         <>
-            <UserInfo user={propsUser || user} />
+            <UserInfo user={{ ...propsUser, ...user }} />
             <MessageFormWrapper className='message-form with-user'>
                 <TextInput
                     type='text'

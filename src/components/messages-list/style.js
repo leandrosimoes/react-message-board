@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { theme } from '../../contants'
+import { theme } from '~/constants'
 
 export const MessagesListWrapper = styled.div`
     width: 100%;

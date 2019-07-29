@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme } from '../../contants'
+import { theme } from '~/constants'
 
 export const MessageFormWrapper = styled.div`
     width: 100%;

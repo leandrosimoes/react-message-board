@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/database'
 import 'firebase/auth'
 
-import { firebaseCredentials } from '../credentials'
+import { firebaseCredentials } from '~/credentials'
 
 const app = firebase.initializeApp(firebaseCredentials)
 

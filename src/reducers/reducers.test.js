@@ -1,5 +1,5 @@
-import { ACTION_TYPES } from '../actions'
-import reducer, { INITIAL_STATE } from './index'
+import { ACTION_TYPES } from '~/actions'
+import reducer, { INITIAL_STATE } from '~/reducers'
 
 describe('reducers.test.js', () => {
     test('SET_USER', () => {

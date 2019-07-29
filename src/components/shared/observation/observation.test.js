@@ -1,6 +1,6 @@
 import React from 'react'
 import { create } from 'react-test-renderer'
-import Observation from './index'
+import Observation from '~/components/shared/observation'
 
 describe('observation.test.js', () => {
     test('<Observation /> should render', () => {

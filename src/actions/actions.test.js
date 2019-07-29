@@ -1,4 +1,4 @@
-import { providers } from '../firebase'
+import { providers } from '~/firebase'
 
 import {
     addMessage,
@@ -9,7 +9,7 @@ import {
     logout,
     setUser,
     ACTION_TYPES,
-} from './index'
+} from '~/actions'
 
 describe('actions.test.js', () => {
     test('addMessage', () => {
