@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 import { theme } from '../../contants'
 
+export const BtnLogout = styled.button`
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    outline: none;
+`
+
 export const UserInfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -40,3 +49,5 @@ export const UserInfoWrapper = styled.div`
         text-decoration: none;
     }
 `
+
+export default { UserInfoWrapper, BtnLogout }

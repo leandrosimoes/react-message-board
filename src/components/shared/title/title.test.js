@@ -1,6 +1,6 @@
 import React from 'react'
-import Title from '../title'
 import { create } from 'react-test-renderer'
+import Title from './index'
 
 describe('title.test.js', () => {
     test('<Title /> should render', () => {

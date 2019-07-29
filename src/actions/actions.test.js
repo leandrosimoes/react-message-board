@@ -1,15 +1,15 @@
 import { providers } from '../firebase'
 
-import { 
-    addMessage, 
-    initFetchMessages, 
-    fetchMessages, 
-    endFetchMessages, 
+import {
+    addMessage,
+    initFetchMessages,
+    fetchMessages,
+    endFetchMessages,
     login,
-    logout, 
-    setUser, 
-    ACTION_TYPES 
-} from '../actions'
+    logout,
+    setUser,
+    ACTION_TYPES,
+} from './index'
 
 describe('actions.test.js', () => {
     test('addMessage', () => {

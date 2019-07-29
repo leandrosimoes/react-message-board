@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../button'
 import { create } from 'react-test-renderer'
+import Button from './index'
 
 describe('button.test.js', () => {
     test('<Button /> should render', () => {

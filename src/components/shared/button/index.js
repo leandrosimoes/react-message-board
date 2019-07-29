@@ -15,8 +15,8 @@ const Button = styled.button`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ${props => (!!props.canClick ? 'pointer-events: all;' : 'pointer-events: none;')}
-    ${props => (!!props.canClick ? 'opacity: 1;' : 'opacity: .8;')}
+    ${props => (props.canClick ? 'pointer-events: all;' : 'pointer-events: none;')}
+    ${props => (props.canClick ? 'opacity: 1;' : 'opacity: .8;')}
 
     &:hover {
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);

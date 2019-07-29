@@ -1,6 +1,6 @@
 import React from 'react'
-import Loading from '../loading'
 import { create } from 'react-test-renderer'
+import Loading from './index'
 
 describe('loading.test.js', () => {
     test('<Loading /> should render', () => {

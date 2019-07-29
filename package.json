@@ -6,7 +6,9 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@types/prop-types": "^15.7.1",
     "firebase": "^6.3.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -39,6 +41,15 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.14.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
   }
 }

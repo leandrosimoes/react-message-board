@@ -1,8 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import actions from '../../actions'
 
-import { UserInfoWrapper } from './style'
+import { UserInfoWrapper, BtnLogout } from './style'
 
 export const UserInfo = props => {
     const dispatch = useDispatch()
@@ -17,22 +18,26 @@ export const UserInfo = props => {
     }
 
     return (
-        <UserInfoWrapper className="user-info" >
+        <UserInfoWrapper className='user-info'>
             <small>Logged in as:</small>
             <div>
                 <div>
-                    <img src={user.photoURL} alt={'User profile pic'} />
+                    <img src={user.photoURL} alt='User profile pic' />
                 </div>
-                <div className={'user-info-column'}>
+                <div className='user-info-column'>
                     <h5>{user.displayName}</h5>
                     <span>{user.email}</span>
                 </div>
             </div>
-            <a type='button' href='#' onClick={handleLogoutClick}>
+            <BtnLogout type='button' onClick={handleLogoutClick}>
                 Logout
-            </a>
+            </BtnLogout>
         </UserInfoWrapper>
     )
+}
+
+UserInfo.propTypes = {
+    user: PropTypes.oneOfType([PropTypes.object]).isRequired,
 }
 
 export default UserInfo
