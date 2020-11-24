@@ -30,7 +30,7 @@ function App() {
                 <Title>Leave a message for me!</Title>
                 <MessageForm />
                 <Observation>
-                    Here you'll see just the last 6 messages, but don't worry, I'll see them all!
+                    Here you'll see just the last 10 messages, but don't worry, I'll see them all!
                 </Observation>
                 <MessagesList />
             </Wrapper>

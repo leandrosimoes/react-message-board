@@ -55,9 +55,9 @@ describe('messages-list.test.js', () => {
             )
         })
         const messageItems = container.getElementsByClassName('messages-list-item')
-        expect(messageItems).toHaveLength(2)
+        expect(messageItems).toHaveLength(3) // 3 because there is a default message that is automatically added to the list
 
-        const [message1, message2] = messageItems
+        const [, message1, message2] = messageItems
 
         const userName = message1.getElementsByTagName('strong')[0]
         const userEmail = message1.getElementsByClassName('user-email')[0]
